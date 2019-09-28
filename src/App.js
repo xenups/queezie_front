@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import About from './components/about'
-import Contacts from './components/contacts'
+import Questions from './components/questions'
 import logo from './logo.svg';
 import axios from "axios";
 import './App.css';
@@ -22,21 +22,8 @@ class App extends Component {
   
   render() {
     return (
-      <div className="container">
-        <div className="col-xs-8">
-        <h1>Questions Cards</h1>
-        {this.state.users.map((user) => (
-          <div className="card">
-           <div className="card-body">
-               <h5 className="card-title">{user.question_context}</h5>
-              <h6 className="card-subtitle mb-2 text-muted">
-              {user.userId}             
-              </h6>
-            </div>
-          </div>
-        ))}
-        </div>
-       </div>
+      <Questions questions={this.state.users} />
+
     )
   }
 
